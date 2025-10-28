@@ -22,7 +22,7 @@ h2 {
 }
 
 p {
-    font-size: clamp(12px, 3vw, 18px)
+    font-size: clamp(12px, 3vw, 18px);
 }
 
 ul {
@@ -181,13 +181,16 @@ svg {
 
 /* Controls individual project boxes */
 .project-wrapper {
-    display: block;
-    width: 100%;
+    text-align: start;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
     height: 40vh;
     box-sizing: border-box;
     background-color: rgb(20, 20, 20);
     border-radius: 3rem;
-    padding: 5px 10px;
+    padding: 15px;
     position: relative;
 }
 
@@ -223,8 +226,10 @@ svg {
 }
 
 .tags-container {
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     gap: 8px;
     justify-content: start;
     align-items: center;
@@ -285,6 +290,46 @@ svg {
                 0 0 7px 2px rgba(255, 255, 255, 0.1);
     border-radius: 80px;
     background-clip: border-box !important;
+}
+
+.icon-wrapper {
+    z-index: 1;
+}
+
+.icon-bg {
+    width: 75px;
+    height: 75px;
+    padding: 5px;
+    display: block;
+    box-sizing: border-box;
+    background-color: rgb(20, 20, 20);
+    border-radius: 30px;
+    position: relative;
+}
+
+.icon-bg::after, .icon-bg::before {
+    --angle: 0deg;
+    inset: -3px;
+    content: '';
+    position: absolute;
+    background-image: conic-gradient(from var(--angle), var(--aqua), var(--blue), var(--aqua));
+    z-index: -1;
+    border-radius: 33px;
+    animation: 10s spin linear infinite;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+.icon-bg::before {
+    filter: blur(0.5rem);
+    opacity: 0.75;
 }
 
 .gradient-flow {
