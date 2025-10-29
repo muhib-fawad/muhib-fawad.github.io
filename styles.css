@@ -169,14 +169,12 @@ svg {
 .project-container {
     display: flex;
     flex-wrap: wrap;
+    overflow: wrap;
     justify-content: center;
     padding: 25px 0;
-    gap: 1.5vw;
+    gap: 25px;
     width: 100%;
-}
-
-.project-container li {
-    width: clamp(20px, 25%, 500px);
+   
 }
 
 /* Controls individual project boxes */
@@ -187,6 +185,7 @@ svg {
     align-items: start;
     flex-direction: column;
     height: 40vh;
+    width: clamp(20px, 25%, 500px);
     box-sizing: border-box;
     background-color: rgb(20, 20, 20);
     border-radius: 3rem;
@@ -225,6 +224,38 @@ svg {
     opacity: 0.75;
 }
 
+.icon-wrapper {
+    z-index: 1;
+    width: 25%;
+}
+
+.icon-bg {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    display: block;
+    box-sizing: border-box;
+    background-color: rgb(20, 20, 20);
+    border-radius: 30px;
+    position: relative;
+}
+
+.icon-bg::after, .icon-bg::before {
+    --angle: 0deg;
+    inset: -3px;
+    content: '';
+    position: absolute;
+    background-image: conic-gradient(from var(--angle), var(--aqua), var(--blue), var(--aqua));
+    z-index: -1;
+    border-radius: 33px;
+    animation: 10s spin linear infinite;
+}
+
+.icon-bg::before {
+    filter: blur(0.5rem);
+    opacity: 0.75;
+}
+
 .tags-container {
     text-align: center;
     display: flex;
@@ -238,7 +269,7 @@ svg {
 }
 .tags {
     width: fit-content;
-    padding: 3px 2px;
+    padding: 5px 10px;
     font-size: clamp(10px, 2vw, 16px);
     border: white solid 1px; /* Default border */
     border-radius: 50px;
@@ -276,6 +307,8 @@ svg {
     background-color: rgba(255, 200, 0, 0.1);
 }
 
+/* Below icon styling is used solely for the clickable links in the hero section while below is used for the projects*/
+
 .icon {
     margin: 0;
     padding: 0;
@@ -292,46 +325,6 @@ svg {
     background-clip: border-box !important;
 }
 
-.icon-wrapper {
-    z-index: 1;
-}
-
-.icon-bg {
-    width: 75px;
-    height: 75px;
-    padding: 5px;
-    display: block;
-    box-sizing: border-box;
-    background-color: rgb(20, 20, 20);
-    border-radius: 30px;
-    position: relative;
-}
-
-.icon-bg::after, .icon-bg::before {
-    --angle: 0deg;
-    inset: -3px;
-    content: '';
-    position: absolute;
-    background-image: conic-gradient(from var(--angle), var(--aqua), var(--blue), var(--aqua));
-    z-index: -1;
-    border-radius: 33px;
-    animation: 10s spin linear infinite;
-}
-
-@keyframes spin {
-    from {
-        --angle: 0deg;
-    }
-    to {
-        --angle: 360deg;
-    }
-}
-
-.icon-bg::before {
-    filter: blur(0.5rem);
-    opacity: 0.75;
-}
-
 .gradient-flow {
     background: radial-gradient(circle at center, var(--aqua), var(--blue));
     background-size: 300%;
@@ -345,4 +338,17 @@ svg {
 @keyframes gradientFlow {
     0%   { background-position-x: 300%; }
     100%  { background-position-x: 0%; }
+}
+
+@media (max-width: 768px) { 
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;  
+  }
+
+  .project-wrapper {
+    width: 90% !important;
+  }
 }
