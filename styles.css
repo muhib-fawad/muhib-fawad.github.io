@@ -256,18 +256,29 @@ svg {
     opacity: 0.75;
 }
 
+.project-header {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.project-description {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.15));
+}
+
 .tags-container {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    height: auto;
     gap: 8px;
     justify-content: start;
     align-items: center;
     overflow: hidden;
-    padding: 0;
+    box-sizing: border-box;
 }
+
 .tags {
+    box-sizing: border-box;
     width: fit-content;
     padding: 5px 10px;
     font-size: clamp(10px, 2vw, 16px);
@@ -275,7 +286,9 @@ svg {
     border-radius: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 12px;
 }
+
 .python-tag {
     border: orange solid 1px;
     color: orange;
