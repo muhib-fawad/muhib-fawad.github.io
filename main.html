@@ -14,18 +14,10 @@
 
         <nav>
             <ul id="navbar">
-                <li><a href="#hero">Home</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a id="skills-nav" href="#technical-skills">Technical Skills</a></li>
-                <script>
-                    const link = document.getElementById('skills-nav');
-                    function updateLink() {
-                        link.textContent = window.innerWidth <= 768 ? 'Skills' : 'Technical Skills';
-                    }
-                    updateLink();
-                    window.addEventListener('resize', updateLink);
-                </script>
+                <!-- <li><a id="skills-nav" href="#technical-skills">Technical Skills</a></li> -->
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
         </nav>
@@ -76,34 +68,48 @@
                                 </svg>
                             </div>
                         </div>
-                        <h3 class="project-header">Quick Emoji</h3>
-                        <p class="project-description">Neural network for guessing emoji given text</p>
+                        <div>
+                            <h3 class="project-header">Quick Emoji</h3>
+                            <p class="project-description">Neural network for guessing emoji given text</p>
+                        </div>
                         <ul class="tags-container">
-                            <li class="tags python-tag">Python</li>
+                            <li class="tags language-tag">Python</li>
+                            <li class="tags framework-tag">TensorFlow</li>
+                            <li class="tags framework-tag">Numpy</li>
+                            <li class="tags framework-tag">Pandas</li>
+                            <li class="tags framework-tag">scikit-learn</li>
                         </ul>
                     </li>
                     <li class="project-wrapper">
                         <h3 class="project-header">Quick Emoji</h3>
                         <p class="project-description"></p>
                         <ul class="tags-container">
-                            <li class="tags python-tag">Python</li>
+                            <li class="tags language-tag">Python</li>
                         </ul>
                     </li>
                     <li class="project-wrapper">
                         <h3 class="project-header">Quick Emoji</h3>
                         <p class="project-description"></p>
                         <ul class="tags-container">
-                            <li class="tags python-tag">Python</li>
+                            <li class="tags language-tag">Python</li>
                         </ul>
                     </li>
                 </ul>
             </section>
-            <section id="technical-skills">
+            <!-- <section id="technical-skills">
                 <h2 class="gradient-flow">Technical Skills</h2>
-                <ul>
-                    <li></li>
+                <ul class="skills-container">
+                    <li class="skills-wrapper">
+                        <h3 class="skills-header">Languages</h3>
+                    </li>
+                    <li class="skills-wrapper">
+                        <h3 class="skills-header">Tools/Frameworks</h3>
+                    </li>
+                    <li class="skills-wrapper">
+                        <h3 class="skills-header">IDEs</h3>
+                    </li>
                 </ul>
-            </section>
+            </section> -->
             <section id="contact">
                 <h2 class="gradient-flow">Contact Me</h2>
             </section>
