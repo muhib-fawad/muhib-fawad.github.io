@@ -7,8 +7,8 @@ const particleCount = 400;
 function resizeCanvas() {
   const oldWidth = width;
   const oldHeight = height;
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight + 200;
+  width = canvas.width = window.visualViewport.width;
+  height = canvas.height = window.visualViewport.height;
 
   const scaleX = width / oldWidth;
   const scaleY = height / oldHeight;
