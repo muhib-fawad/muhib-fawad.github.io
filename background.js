@@ -21,7 +21,7 @@ function resizeCanvas() {
 
 window.visualViewport.addEventListener("resize", resizeCanvas);
 window.visualViewport.addEventListener("orientationchange", resizeCanvas);
-window.addEventListener('scroll', resizeCanvas;
+window.addEventListener('scroll', resizeCanvas);
 resizeCanvas();
 
 for (let i = 0; i < particleCount; i++) {
