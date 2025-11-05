@@ -7,20 +7,20 @@ const particleCount = 400;
 function resizeCanvas() {
   const oldWidth = width;
   const oldHeight = height;
-  width = canvas.width = window.screen.width;
-  height = canvas.height = window.screen.height;
+  width = canvas.width = window.visualViewport.width;
+  height = canvas.height = window.visualViewport.height;
 
   const scaleX = width / oldWidth;
   const scaleY = height / oldHeight;
 
-  particles.forEach(p => {
+  particles.forEach((p) => {
     p.x *= scaleX;
     p.y *= scaleY;
   });
 }
 
-window.addEventListener("resize", resizeCanvas);
-window.addEventListener("orientationchange", resizeCanvas);
+window.visualViewport.addEventListener("resize", resizeCanvas);
+window.visualViewport.addEventListener("orientationchange", resizeCanvas);
 resizeCanvas();
 
 for (let i = 0; i < particleCount; i++) {
