@@ -23,7 +23,7 @@ h2 {
 }
 
 p {
-    font-size: clamp(1rem, 0.4vw + 1rem, 1.5rem);
+    font-size: clamp(1rem, 0.3vw + 1rem, 1.5rem);
     margin: 0 auto min(15px, 2%);
     width: 50%;
 }
@@ -86,7 +86,7 @@ nav li:hover {
 #bg-canvas {
     overflow: hidden;
     position: fixed;
-    top: 100lvh - 100dvh;
+    top: 100lvh - 100dvh; /* Offset by address bar to prevent black bar clipping */
     left: 0;
     width: 100%;
     height: 100lvh;
@@ -283,7 +283,7 @@ svg {
 }
 
 .project-header {
-    font-size: clamp(16px, 6vw, 32px);
+    font-size: clamp(16px, 1.3vw, 32px);
     padding: 0;
     margin: 32px 0 12px;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.15));
@@ -291,7 +291,7 @@ svg {
 
 .project-description {
     width: 100%;
-    font-size: clamp(1px, 4vw, 24px);
+    font-size: clamp(8px, 1vw, 24px);
     padding: 0;
     margin: 12px 0;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.15));
@@ -518,6 +518,14 @@ button[type="submit"] {
         flex-direction: column;
         align-items: center;  
         justify-content: center;  
+    }
+
+    .project-header {
+        font-size: clamp(16px, 5vw, 32px);
+    }
+
+    .project-description {
+        font-size: clamp(8px, 3.6vw, 24px);
     }
 
     .project-wrapper {
