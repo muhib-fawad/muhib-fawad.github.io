@@ -183,6 +183,7 @@ svg {
 
 /* Controls individual project boxes */
 .project-wrapper {
+    --angle: 0deg;
     text-align: start;
     display: flex;
     justify-content: space-between;
@@ -199,18 +200,17 @@ svg {
     border-radius: 3rem;
     padding: min(24px, 6%);
     position: relative;
-    
+
     &::after, &::before {
         /* Offload animation to GPU */
         transform: translate3d(0, 0, 0);
-        --angle: 0deg;
         inset: -0.2rem;
         content: '';
         position: absolute;
         background-image: conic-gradient(from var(--angle), var(--aqua), var(--blue), var(--aqua));
         z-index: -1;
         border-radius: 3.2rem;
-        animation: 10s spin linear infinite;
+        /* animation: 10s spin linear infinite; */
     }
 
     &::before {
@@ -254,7 +254,7 @@ svg {
         background-image: conic-gradient(from var(--angle), var(--aqua), var(--blue), var(--aqua));
         z-index: -1;
         border-radius: 33px;
-        animation: 10s spin linear infinite;
+        /* animation: 10s spin linear infinite; */
     }
     &::before {
         filter: blur(0.5rem);
@@ -290,6 +290,7 @@ svg {
 }
 
 .project-description {
+    width: 100%;
     font-size: clamp(1px, 4vw, 24px);
     padding: 0;
     margin: 12px 0;
@@ -356,6 +357,7 @@ form {
 
 .input-wrapper {
     /* width: clamp(20px, 25%, 500px); */
+    --angle: 0deg;
     width: 50%;
     height: 100%;
     font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
@@ -378,14 +380,13 @@ form {
     &::after, &::before {
         /* Offload animation to GPU */
         transform: translate3d(0, 0, 0);
-        --angle: 0deg;
         inset: -0.2rem;
         content: '';
         position: absolute;
         background-image: conic-gradient(from var(--angle), var(--aqua), var(--blue), var(--aqua));
         z-index: -1;
         border-radius: 1.2rem;
-        animation: 10s spin linear infinite;
+        /* animation: 10s spin linear infinite; */
     }
 
     &::before {
@@ -486,7 +487,7 @@ button[type="submit"] {
 }
 
 /* CSS Animations */
-@property --angle {
+/* @property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
@@ -499,7 +500,7 @@ button[type="submit"] {
     to {
         --angle: 360deg;
     }
-}
+} */
 
 @keyframes gradientFlow {
     0%   { background-position-x: 300%; }
