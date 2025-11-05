@@ -18,12 +18,12 @@ body {
 }
 
 h2 {
-    font-size: clamp(1.25rem, 4vw + 1.25rem, 3.8rem);
+    font-size: clamp(1.25rem, 3vw + 1.25rem, 3.8rem);
     margin: min(30px, 4%) 0 min(20px, 3%);
 }
 
 p {
-    font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+    font-size: clamp(1rem, 0.4vw + 1rem, 1.5rem);
     margin: 0 auto min(15px, 2%);
     width: 50%;
 }
@@ -401,7 +401,7 @@ form {
     font-size: 0.8em;
     border-radius: 1rem;
     box-sizing: border-box;
-    padding: min(16px, 3%);
+    padding: min(16px, 4%);
     border: none;
     background-color: inherit;
     color: white;
@@ -509,6 +509,10 @@ button[type="submit"] {
 
 /* Whenever device/screen is below 1400px */
 @media (max-width: 1400px) { 
+    p {
+        width: 100%;
+    }
+
     .project-container {
         display: flex;
         flex-direction: column;
