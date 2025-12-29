@@ -509,7 +509,7 @@ button[type="submit"] {
 /* CSS Animation */
 .scroll-animation {
     animation: text-appear both;
-    animation-timeline: view();
+    animation-timeline: scroll();
     animation-range: entry 10% cover 50%;
 }
 
