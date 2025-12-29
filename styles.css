@@ -6,6 +6,10 @@
     --cyan: 0, 191, 255;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     overflow-x: hidden;    
     height: 100svh; 
@@ -509,8 +513,8 @@ button[type="submit"] {
 /* CSS Animation */
 .scroll-animation {
     animation: text-appear both;
-    animation-timeline: scroll();
-    animation-range: entry 10% cover 50%;
+    animation-timeline: view();
+    animation-range: entry 10svh cover 50svh;
 }
 
 @keyframes text-appear {
